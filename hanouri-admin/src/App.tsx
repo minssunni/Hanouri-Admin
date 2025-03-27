@@ -1,14 +1,13 @@
-import './App.css'
-import LoginPage from './pages/LoginPage';
+// import React from 'react';
+// import { RouterProvider } from 'react-router-dom';
 
-function App() {
-  return (
-    <>
-      <div>
-        <LoginPage />
-      </div>
-    </>
-  )
-}
+// function App({routes}) {
 
-export default App
+//   return (
+//     <>
+//       <RouterProvider router={router}/>
+//     </>
+//   );
+// }
+
+// export default App;

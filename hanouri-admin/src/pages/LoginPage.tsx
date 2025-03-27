@@ -1,20 +1,18 @@
-// File: src/pages/LoginPage.tsx
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { userList } from '../draftUserList';
 import { useNavigate } from 'react-router-dom';
 
-const LoginPage: React.FC = () => {
+const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
   
     const handleLogin = () => {
       const user = userList.find(user => user.username === username && user.password === password);
   
       if (user) {
-        const navigate = useNavigate();
-        navigate('/attendance');
+        navigate('/');
       } else {
         setError('Invalid username and/or password. Please try again.');
       }
