@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { userList } from '../draftUserList';
+import { userList } from '../mockData/draftUserList';
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
