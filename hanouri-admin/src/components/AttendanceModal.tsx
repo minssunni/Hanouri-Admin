@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import styles from '../styles/AttendanceModal.module.css';
+import { mokwonList } from '../mockData/draftMokwonList';
 
 const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
-  const [attendance, setAttendance] = useState([
-    { id: 1, studentName: 'Student 1', present: false },
-    { id: 2, studentName: 'Student 2', present: false },
-    { id: 3, studentName: 'Student 3', present: false },
-    // Add more students as needed
-  ]);
+  const [attendance, setAttendance] = useState(mokwonList);
   const [selectAll, setSelectAll] = useState(false);
 
   const handleCheckboxChange = (id) => {
@@ -21,6 +17,9 @@ const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
       return item;
     });
     setAttendance(updatedAttendance);
+
+    const allSelected = updatedAttendance.every((item) => item.present);
+    setSelectAll(allSelected);
   };
 
   const handleSelectAll = () => {
@@ -52,15 +51,15 @@ const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
               Select All
             </label>
           </li>
-          {attendance.map((student) => (
-            <li key={student.id}>
+          {attendance.map((mokwon) => (
+            <li key={mokwon.id}>
               <label>
                 <input
                   type="checkbox"
-                  checked={student.present}
-                  onChange={() => handleCheckboxChange(student.id)}
+                  checked={mokwon.present}
+                  onChange={() => handleCheckboxChange(mokwon.id)}
                 />
-                {student.studentName}
+                {mokwon.name}
               </label>
             </li>
           ))}
