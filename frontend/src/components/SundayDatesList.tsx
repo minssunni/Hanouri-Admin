@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import AttendanceModal from './AttendanceModal';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess'; // Import the ExpandLessIcon
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the ExpandLessIcon
 
 const SundayDatesList = () => {
   const startDate = new Date(); // Set the desired start date
@@ -21,7 +23,13 @@ const SundayDatesList = () => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   const handleDateClick = (date) => {
-    setSelectedDate(date);
+    if (selectedDate && selectedDate.toISOString() === date.toISOString()) {
+      // If the selected date is the same as the current date button, close the modal
+      setSelectedDate(null);
+    } else {
+      // If a different date or no date is selected, open the modal for the clicked date
+      setSelectedDate(date);
+    }
   };
 
   const handleCloseModal = () => {
@@ -29,7 +37,6 @@ const SundayDatesList = () => {
   };
 
   const handleSaveAttendance = () => {
-    // Implement the logic to save the attendance data
     console.log('Attendance data:', selectedDate);
     handleCloseModal();
   };
@@ -40,17 +47,29 @@ const SundayDatesList = () => {
       <ul>
         {sundays.map((date) => (
           <li key={date.toISOString()}>
-            <button onClick={() => handleDateClick(date)}>{date.toDateString()}</button>
+            <button
+              className="buttonList"
+              onClick={() => handleDateClick(date)}
+            >
+            {selectedDate && selectedDate.toISOString() === date.toISOString() ? (
+              <ExpandLessIcon /> // Display the ExpandLessIcon if selected
+            ) : (
+              <ExpandMoreIcon /> // Display the ExpandMoreIcon initially
+            )}
+              {date.toDateString()}
+            </button>
+            {selectedDate && selectedDate.toISOString() === date.toISOString() && (
+              <AttendanceModal
+                selectedDate={selectedDate}
+                onClose={handleCloseModal}
+                onSave={handleSaveAttendance}
+              />
+            )}
           </li>
         ))}
       </ul>
-
-      {selectedDate && (
-        <AttendanceModal selectedDate={selectedDate} onClose={handleCloseModal} onSave={handleSaveAttendance} />
-      )}
     </div>
   );
 };
-
 
 export default SundayDatesList;
