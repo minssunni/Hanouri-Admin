@@ -48,14 +48,14 @@ const SundayDatesList = () => {
         {sundays.map((date) => (
           <li key={date.toISOString()}>
             <button
-              className="buttonList"
+              className={`buttonList ${selectedDate && selectedDate.toISOString() === date.toISOString() ? "selectedButton" : ''}`}  // Add conditional class
               onClick={() => handleDateClick(date)}
             >
-            {selectedDate && selectedDate.toISOString() === date.toISOString() ? (
-              <ExpandLessIcon /> // Display the ExpandLessIcon if selected
-            ) : (
-              <ExpandMoreIcon /> // Display the ExpandMoreIcon initially
-            )}
+              {selectedDate && selectedDate.toISOString() === date.toISOString() ? (
+                <ExpandLessIcon />
+              ) : (
+                <ExpandMoreIcon />
+              )}
               {date.toDateString()}
             </button>
             {selectedDate && selectedDate.toISOString() === date.toISOString() && (
