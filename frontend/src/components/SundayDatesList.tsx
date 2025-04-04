@@ -44,7 +44,6 @@ const SundayDatesList = () => {
   return (
     <div>
       <h2>Sunday Dates List</h2>
-      <ul>
         {sundays.map((date) => (
           <li key={date.toISOString()}>
             <button
@@ -67,7 +66,6 @@ const SundayDatesList = () => {
             )}
           </li>
         ))}
-      </ul>
     </div>
   );
 };

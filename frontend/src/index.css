@@ -68,7 +68,11 @@ button:focus-visible {
 } */
 
 
-ul {
+ul{
+  padding: 0;
+}
+
+li{
   list-style-type: none;
   padding: 0;
 }
