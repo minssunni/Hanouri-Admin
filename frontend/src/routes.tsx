@@ -2,7 +2,7 @@ import { Navigate, Route, createBrowserRouter, createRoutesFromElements } from '
 import HomePage from './pages/HomePage';
 import Loginpage from './pages/LoginPage';
 import MokwonsPage from './pages/MokwonsPage';
-import AddUserForm from './pages/AddUserForm';
+import AddUserForm from './components/AddUserForm';
 
 export const router = createBrowserRouter(
     createRoutesFromElements(

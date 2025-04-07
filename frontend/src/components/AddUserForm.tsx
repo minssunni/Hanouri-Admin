@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./AddUserForm.css"; // Import the CSS file for styling
+import styles from "../styles/AddUserForm.module.css"; // Import the CSS file for styling
 import { useNavigate } from "react-router-dom";
+import SuccessDialog from "./SuccessDialog";
 
 const AddUserForm = () => {
   const [name, setName] = useState("");
@@ -15,7 +16,6 @@ const AddUserForm = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const navigate = useNavigate();
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,14 +45,12 @@ const AddUserForm = () => {
     navigate("/");
   };
 
-
   return (
-    <div className="addUserForm">
+    <div className={styles.addUserForm}>
       <h2>Add User</h2>
       <form onSubmit={handleSubmit}>
-
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
+        <div className={styles.formGroup}>
+          <label className={styles.inputLabel} htmlFor="name">Name</label>
           <input
             id="name"
             type="text"
@@ -61,8 +59,8 @@ const AddUserForm = () => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="dateOfBirth">Date of Birth</label>
+        <div className={styles.formGroup}>
+          <label className={styles.inputlabel} htmlFor="dateOfBirth">Date of Birth</label>
           <input
             id="dateOfBirth"
             type="date"
@@ -70,8 +68,8 @@ const AddUserForm = () => {
             onChange={(e) => setDateOfBirth(e.target.value)}
           />
         </div>
-        
-        <div className="form-group">
+
+        <div className={styles.formGroup}>
           <label>Gender</label>
           <div>
             <label>
@@ -96,9 +94,9 @@ const AddUserForm = () => {
             </label>
           </div>
         </div>
-      
-        <div className="form-group">
-          <label htmlFor="address">Address</label>
+
+        <div className={styles.formGroup}>
+          <label className={styles.inputLabel} htmlFor="address">Address</label>
           <input
             id="address"
             type="text"
@@ -107,8 +105,8 @@ const AddUserForm = () => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="carPlate">Car Plate</label>
+        <div className={styles.formGroup}>
+          <label className={styles.inputLabel} htmlFor="carPlate">Car Plate</label>
           <input
             id="carPlate"
             type="text"
@@ -117,8 +115,8 @@ const AddUserForm = () => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="emergencyContact">Emergency Contact</label>
+        <div className={styles.formGroup}>
+          <label className={styles.inputLabel} htmlFor="emergencyContact">Emergency Contact</label>
           <input
             id="emergencyContact"
             type="text"
@@ -127,8 +125,8 @@ const AddUserForm = () => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="dateAdded">Date Added</label>
+        <div className={styles.formGroup}>
+          <label className={styles.inputLabel} htmlFor="dateAdded">Date Added</label>
           <input
             id="dateAdded"
             type="date"
@@ -137,8 +135,8 @@ const AddUserForm = () => {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="notes">Other Notes</label>
+        <div className={styles.formGroup}>
+          <label className={styles.inputLabel} htmlFor="notes">Other Notes</label>
           <textarea
             id="notes"
             value={notes}
@@ -146,18 +144,11 @@ const AddUserForm = () => {
           />
         </div>
 
-        <button className="buttonSmall" type="submit">Add User</button>
+        <button className="buttonSmall" type="submit">
+          Add User
+        </button>
       </form>
-
-
-      {showSuccess && (
-        <div className="successDialog">
-          <h3>Success!</h3>
-          <p>User has been added successfully.</p>
-          <button className="buttonSmall" onClick={handleDialogClose}>Close</button>
-        </div>
-      )}
-
+      {showSuccess && <SuccessDialog onClose={handleDialogClose} />}
     </div>
   );
 };
