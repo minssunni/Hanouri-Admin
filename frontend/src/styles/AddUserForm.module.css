@@ -4,9 +4,8 @@
     margin-bottom: 10px;
   }
 
-label {
+.formLabel {
   width: 180px;
   text-align: left;
   margin-right: 10px;
 }
-

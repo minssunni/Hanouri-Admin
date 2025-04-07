@@ -50,7 +50,7 @@ const AddUserForm = () => {
       <h2>Add User</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="name">
+          <label className={styles.formLabel} htmlFor="name">
             Name
           </label>
           <input
@@ -62,7 +62,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="dateOfBirth">
+          <label className={styles.formLabel} htmlFor="dateOfBirth">
             Date of Birth
           </label>
           <input
@@ -74,7 +74,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel}>Gender</label>
+          <label className={styles.formLabel}>Gender</label>
 
           <div>
             <label>
@@ -101,7 +101,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="address">
+          <label className={styles.formLabel} htmlFor="address">
             Address
           </label>
           <input
@@ -113,7 +113,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="carPlate">
+          <label className={styles.formLabel} htmlFor="carPlate">
             Car Plate
           </label>
           <input
@@ -125,7 +125,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="emergencyContact">
+          <label className={styles.formLabel} htmlFor="emergencyContact">
             Emergency Contact
           </label>
           <input
@@ -137,7 +137,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="dateAdded">
+          <label className={styles.formLabel} htmlFor="dateAdded">
             Date Added
           </label>
           <input
@@ -149,7 +149,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="notes">
+          <label className={styles.formLabel} htmlFor="notes">
             Other Notes
           </label>
           <textarea
