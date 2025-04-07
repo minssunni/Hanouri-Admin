@@ -46,11 +46,13 @@ const AddUserForm = () => {
   };
 
   return (
-    <div className={styles.addUserForm}>
+    <div>
       <h2>Add User</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="name">Name</label>
+          <label className={styles.inputLabel} htmlFor="name">
+            Name
+          </label>
           <input
             id="name"
             type="text"
@@ -60,7 +62,9 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputlabel} htmlFor="dateOfBirth">Date of Birth</label>
+          <label className={styles.inputLabel} htmlFor="dateOfBirth">
+            Date of Birth
+          </label>
           <input
             id="dateOfBirth"
             type="date"
@@ -70,7 +74,8 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label>Gender</label>
+          <label className={styles.inputLabel}>Gender</label>
+
           <div>
             <label>
               <input
@@ -96,7 +101,9 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="address">Address</label>
+          <label className={styles.inputLabel} htmlFor="address">
+            Address
+          </label>
           <input
             id="address"
             type="text"
@@ -106,7 +113,9 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="carPlate">Car Plate</label>
+          <label className={styles.inputLabel} htmlFor="carPlate">
+            Car Plate
+          </label>
           <input
             id="carPlate"
             type="text"
@@ -116,7 +125,9 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="emergencyContact">Emergency Contact</label>
+          <label className={styles.inputLabel} htmlFor="emergencyContact">
+            Emergency Contact
+          </label>
           <input
             id="emergencyContact"
             type="text"
@@ -126,7 +137,9 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="dateAdded">Date Added</label>
+          <label className={styles.inputLabel} htmlFor="dateAdded">
+            Date Added
+          </label>
           <input
             id="dateAdded"
             type="date"
@@ -136,7 +149,9 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.inputLabel} htmlFor="notes">Other Notes</label>
+          <label className={styles.inputLabel} htmlFor="notes">
+            Other Notes
+          </label>
           <textarea
             id="notes"
             value={notes}
