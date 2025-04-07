@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "../styles/AddUserForm.module.css"; // Import the CSS file for styling
+import styles from "../styles/AddUserForm.module.css";
 import { useNavigate } from "react-router-dom";
 import SuccessDialog from "./SuccessDialog";
 

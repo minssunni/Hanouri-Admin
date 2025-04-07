@@ -122,3 +122,11 @@ button:hover {
 .selectedButton {
   background-color: #E9E9E9;
 }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 240px;
+    font-family: Avenir;
+}

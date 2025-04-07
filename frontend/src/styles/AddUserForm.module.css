@@ -1,11 +1,12 @@
 .formGroup {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 
-.inputLabel {
+label {
   width: 180px;
   text-align: left;
   margin-right: 10px;
 }
+
