@@ -3,7 +3,7 @@ import { mokwonList } from '../mockData/draftMokwonList';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const Mokwons = () => {
+const MokwonsPage = () => {
   const [mokwons, setMokwons] = useState(mokwonList);
   const [selectedMokwon, setSelectedMokwon] = useState(null);
 
@@ -47,4 +47,4 @@ const Mokwons = () => {
   );
 };
 
-export default Mokwons;
+export default MokwonsPage;
