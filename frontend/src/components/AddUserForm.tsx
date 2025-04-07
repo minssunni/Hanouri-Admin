@@ -19,10 +19,7 @@ const AddUserForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform data submission or validation here
-    // You can use the state variables to access the form data
-    console.log(name, dateOfBirth, gender, dateAdded, notes);
-    // Clear form after submission
+
     setName("");
     setDateOfBirth("");
     setGender("");
@@ -46,8 +43,7 @@ const AddUserForm = () => {
   };
 
   return (
-    <div>
-      <h2>Add User</h2>
+    <div className={styles.addUserForm}>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label className={styles.formLabel} htmlFor="name">
@@ -155,13 +151,17 @@ const AddUserForm = () => {
           <textarea
             id="notes"
             value={notes}
+            // rows={4}
             onChange={(e) => setNotes(e.target.value)}
           />
         </div>
 
-        <button className="buttonSmall" type="submit">
-          Add User
-        </button>
+        <div className={styles.buttonContainer}>
+          <button className="buttonSecondary">Cancel</button>
+          <button className="buttonPrimary" type="submit">
+            + Add
+          </button>
+        </div>
       </form>
       {showSuccess && <SuccessDialog onClose={handleDialogClose} />}
     </div>

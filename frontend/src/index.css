@@ -98,6 +98,22 @@ button:hover {
   cursor: pointer;
 }
 
+.buttonPrimary {
+  background-color: #9E9E9E;
+  color: white;
+  border: 1px solid #9E9E9E;
+}
+
+.buttonPrimary:hover {
+  color: #9E9E9E;
+}
+
+
+.buttonSecondary {
+  color: #9E9E9E;
+  border: 1px solid #9E9E9E;
+}
+
 .buttonList {
   display: flex;
   align-items: center;
@@ -125,8 +141,14 @@ button:hover {
 
   input[type="text"],
   input[type="date"],
-  select,
-  textarea {
+  select {
     width: 240px;
     font-family: Avenir;
+}
+
+
+textarea {
+  width: 240px;
+  font-family: Avenir;
+  resize: vertical;
 }

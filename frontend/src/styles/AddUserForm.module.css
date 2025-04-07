@@ -1,6 +1,9 @@
+.addUserForm {
+  width: fit-content;
+}
+
 .formGroup {
     display: flex;
-    align-items: center;
     margin-bottom: 10px;
   }
 
@@ -8,4 +11,9 @@
   width: 180px;
   text-align: left;
   margin-right: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: end;
 }

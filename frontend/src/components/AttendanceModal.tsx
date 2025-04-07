@@ -65,8 +65,8 @@ const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
           ))}
         </ul>
         <div>
-          <button className="buttonSmall" onClick={handleSave}>Save</button>
-          <button className="buttonSmall" onClick={onClose}>Cancel</button>
+          <button className="buttonPrimary" onClick={handleSave}>Save</button>
+          <button className="buttonSecondary" onClick={onClose}>Cancel</button>
         </div>
       </div>
     </div>
