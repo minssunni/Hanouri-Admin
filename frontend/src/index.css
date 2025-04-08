@@ -119,7 +119,6 @@ button:hover {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding: 8px;
   margin-right: 0;
   text-align: left;
   font-family: Avenir;
@@ -130,10 +129,7 @@ button:hover {
   background-color: white;
 }
 
-.buttonList:hover {
-  background-color: #E9E9E9;
-  cursor: pointer;
-}
+z
 
 .selectedButton {
   background-color: #E9E9E9;
@@ -145,7 +141,6 @@ button:hover {
     width: 240px;
     font-family: Avenir;
 }
-
 
 textarea {
   width: 240px;

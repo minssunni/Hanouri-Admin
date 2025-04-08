@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { mokwonList } from '../mockData/draftMokwonList';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import BackButton from '../components/BackButton';
 
 const MokwonsPage = () => {
   const [mokwons, setMokwons] = useState(mokwonList);
@@ -17,13 +18,14 @@ const MokwonsPage = () => {
 
   return (
     <div>
+      <BackButton />
       <h1>My Mokwons</h1>
       {mokwons.map((mokwon) => (
         <li key={mokwon.id}>
           <label>
             <button
-              className="buttonList"
-              onClick={() => handleClick(mokwon)}
+          className={`buttonList ${selectedMokwon && selectedMokwon.id === mokwon.id ? "selectedButton" : ''}`}  // Add conditional class
+          onClick={() => handleClick(mokwon)}
             >
               {selectedMokwon && selectedMokwon.id === mokwon.id ? (
                 <ExpandLessIcon />
@@ -33,12 +35,15 @@ const MokwonsPage = () => {
               {mokwon.name}
             </button>
 
-
           </label>
           {selectedMokwon && selectedMokwon.id === mokwon.id && (
             <div>
               <p>Name: {selectedMokwon.name}</p>
-              {/* Render your modal here */}
+              <p>Date of Birth: {selectedMokwon.dateOfBirth}</p>
+              <p>Gedner: {selectedMokwon.gender}</p>
+              <p>Address: {selectedMokwon.address}</p>
+              <p>Emergency Contact: {selectedMokwon.emergencyContact}</p>
+              <p>Notes: {selectedMokwon.notes}</p>
             </div>
           )}
         </li>

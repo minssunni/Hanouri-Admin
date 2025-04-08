@@ -37,7 +37,7 @@ const AddUserForm = () => {
     setDateAdded(formattedDate);
   }, []);
 
-  const handleDialogClose = () => {
+  const handleClose = () => {
     setShowSuccess(false);
     navigate("/");
   };
@@ -157,13 +157,13 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <button className="buttonSecondary">Cancel</button>
+          <button className="buttonSecondary" onClick={handleClose}>Cancel</button>
           <button className="buttonPrimary" type="submit">
             + Add
           </button>
         </div>
       </form>
-      {showSuccess && <SuccessDialog onClose={handleDialogClose} />}
+      {showSuccess && <SuccessDialog onClose={handleClose} />}
     </div>
   );
 };

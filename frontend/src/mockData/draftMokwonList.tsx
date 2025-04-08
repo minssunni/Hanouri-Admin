@@ -1,12 +1,43 @@
 export const mokwonList = [
-  { id: 1, name: 'Mokwon 1', present: false },
-  { id: 2, name: 'Mokwon 2', present: false },
-  { id: 3, name: 'Mokwon 3', present: false },
-  { id: 4, name: 'Mokwon 4', present: false },
-  { id: 5, name: 'Mokwon 5', present: false },
-  { id: 6, name: 'Mokwon 6', present: false },
-  { id: 7, name: 'Mokwon 7', present: false },
-  { id: 8, name: 'Mokwon 8', present: false },
-  { id: 9, name: 'Mokwon 9', present: false }
-];
-  
+  {
+    "id": 1,
+    "name": "John Doe",
+    "dateOfBirth": "1990-05-15",
+    "gender": "Male",
+    "address": "123 Main St, Anytown, USA",
+    "carPlate": "ABC123",
+    "emergencyContact": "Jane Smith",
+    "dateAdded": "2021-01-01",
+    "notes": "Regular customer"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "dateOfBirth": "1995-10-20",
+    "gender": "Female",
+    "address": "456 Center St, Anytown, USA",
+    "carPlate": "XYZ789",
+    "emergencyContact": "John Doe",
+    "dateAdded": "2021-02-15",
+    "notes": "Allergic to peanuts"
+  },
+  {
+    "id": 3,
+    "name": "Mike Johnson",
+    "dateOfBirth": "1988-12-01",
+    "gender": "Male",
+    "address": "789 Elm St, Anytown, USA",
+    "carPlate": "DEF456",
+    "dateAdded": "2021-03-10"
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "dateOfBirth": "1992-07-08",
+    "gender": "Female",
+    "address": "321 Oak St, Anytown, USA",
+    "emergencyContact": "Sarah Wilson",
+    "dateAdded": "2021-04-05",
+    "notes": "VIP customer"
+  }
+]
