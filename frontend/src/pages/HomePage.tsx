@@ -1,23 +1,14 @@
 import { Link } from "react-router-dom";
-import SundayDatesList from "../components/SundayDatesList";
 
 const HomePage = () => {
   return (
     <>
-      <div>
+      <div style={{ display: "flex", flexDirection: "column"}}>
         <h1>Home Page</h1>
-        <Link to="/users">
-          <button>View All Users</button>
-        </Link>
-        <Link to="/attendance">
-          <button>Attendance</button>
-        </Link>
-        <Link to="/myMokwons">
-          <button>My Mokwons</button>
-        </Link>
-        <Link to="/users/add">
-          <button>+ Add User</button>
-        </Link>
+        <Link to="/users"> View All Users</Link>
+        <Link to="/attendance">Attendance</Link>
+        <Link to="/myMokwons">My Mokwons</Link>
+        <Link to="/users/add">+ Add User</Link>
       </div>
     </>
   );

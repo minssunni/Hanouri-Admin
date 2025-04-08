@@ -2,6 +2,7 @@ export const mokwonList = [
   {
     "id": 1,
     "name": "John Doe",
+    "group": "Group A",
     "dateOfBirth": "1990-05-15",
     "gender": "Male",
     "address": "123 Main St, Anytown, USA",
@@ -13,6 +14,7 @@ export const mokwonList = [
   {
     "id": 2,
     "name": "Jane Smith",
+    "group": "Group B",
     "dateOfBirth": "1995-10-20",
     "gender": "Female",
     "address": "456 Center St, Anytown, USA",
@@ -24,6 +26,7 @@ export const mokwonList = [
   {
     "id": 3,
     "name": "Mike Johnson",
+    "group": "Group A",
     "dateOfBirth": "1988-12-01",
     "gender": "Male",
     "address": "789 Elm St, Anytown, USA",
@@ -33,6 +36,7 @@ export const mokwonList = [
   {
     "id": 4,
     "name": "Emily Davis",
+    "group": "Group A",
     "dateOfBirth": "1992-07-08",
     "gender": "Female",
     "address": "321 Oak St, Anytown, USA",

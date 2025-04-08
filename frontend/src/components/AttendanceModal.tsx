@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import styles from '../styles/AttendanceModal.module.css';
+import styles from '../styles/Modal.module.css';
 import { mokwonList } from '../mockData/draftMokwonList';
 
 const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
   const [attendance, setAttendance] = useState(mokwonList);
-  const [selectAll, setSelectAll] = useState(false);
+  const [selectAllPresent, setSelectAllPresent] = useState(false);
 
-  const handleCheckboxChange = (id) => {
+  const handlAllPresentCheckboxChange = (id) => {
     const updatedAttendance = attendance.map((item) => {
       if (item.id === id) {
         return {
@@ -19,17 +19,17 @@ const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
     setAttendance(updatedAttendance);
 
     const allSelected = updatedAttendance.every((item) => item.present);
-    setSelectAll(allSelected);
+    setSelectAllPresent(allSelected);
   };
 
-  const handleSelectAll = () => {
-    const allPresent = !selectAll;
+  const handleSelectAllPresent = () => {
+    const allPresent = !selectAllPresent;
     const updatedAttendance = attendance.map((item) => ({
       ...item,
       present: allPresent,
     }));
     setAttendance(updatedAttendance);
-    setSelectAll(allPresent);
+    setSelectAllPresent(allPresent);
   };
 
   const handleSave = () => {
@@ -38,15 +38,15 @@ const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
 
   return (
     <div className={styles.modal}>
-      <div className={styles.modalContent}>
+      <div>
         <h3>Attendance for {selectedDate.toDateString()}</h3>
         <ul>
           <li>
             <label>
               <input
                 type="checkbox"
-                checked={selectAll}
-                onChange={handleSelectAll}
+                checked={selectAllPresent}
+                onChange={handleSelectAllPresent}
               />
               Select All
             </label>
@@ -57,7 +57,7 @@ const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
                 <input
                   type="checkbox"
                   checked={mokwon.present}
-                  onChange={() => handleCheckboxChange(mokwon.id)}
+                  onChange={() => handlAllPresentCheckboxChange(mokwon.id)}
                 />
                 {mokwon.name}
               </label>
@@ -65,7 +65,7 @@ const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
           ))}
         </ul>
         <div>
-          <button className="buttonPrimary" onClick={handleSave}>Save</button>
+          <button onClick={handleSave}>Save</button>
           <button className="buttonSecondary" onClick={onClose}>Cancel</button>
         </div>
       </div>

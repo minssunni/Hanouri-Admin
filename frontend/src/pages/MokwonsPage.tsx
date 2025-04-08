@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { mokwonList } from '../mockData/draftMokwonList';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import styles from '../styles/Modal.module.css';
 import BackButton from '../components/BackButton';
+import MokwonDetailsModal from '../components/MokwonDetailsModal';
 
 const MokwonsPage = () => {
   const [mokwons, setMokwons] = useState(mokwonList);
@@ -19,7 +21,7 @@ const MokwonsPage = () => {
   return (
     <div>
       <BackButton />
-      <h1>My Mokwons</h1>
+      <h2>My Mokwons</h2>
       {mokwons.map((mokwon) => (
         <li key={mokwon.id}>
           <label>
@@ -37,14 +39,7 @@ const MokwonsPage = () => {
 
           </label>
           {selectedMokwon && selectedMokwon.id === mokwon.id && (
-            <div>
-              <p>Name: {selectedMokwon.name}</p>
-              <p>Date of Birth: {selectedMokwon.dateOfBirth}</p>
-              <p>Gedner: {selectedMokwon.gender}</p>
-              <p>Address: {selectedMokwon.address}</p>
-              <p>Emergency Contact: {selectedMokwon.emergencyContact}</p>
-              <p>Notes: {selectedMokwon.notes}</p>
-            </div>
+            <MokwonDetailsModal selectedMokwon={selectedMokwon} />
           )}
         </li>
       ))}

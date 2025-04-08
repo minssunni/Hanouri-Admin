@@ -67,25 +67,29 @@ button:focus-visible {
   }
 } */
 
+p {
+  margin: 0;
+}
 
-ul{
+ul {
   padding: 0;
 }
 
-li{
+li {
   list-style-type: none;
   padding: 0;
 }
 
 button {
+  display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 8px;
   padding-left: 16px;
   padding-right: 16px;
   margin-right: 8px;
-  /* margin-bottom: 8px; */
   text-align: left;
+  text-decoration: none;
   font-family: Avenir;
   font-size: medium;
   border: 1px solid black;
@@ -94,11 +98,13 @@ button {
 }
 
 button:hover {
-  background-color: #E9E9E9;
+  color: white;
+  background-color: #595959;
+  border: 1px solid #595959;
   cursor: pointer;
 }
 
-.buttonPrimary {
+/* .buttonPrimary {
   background-color: #9E9E9E;
   color: white;
   border: 1px solid #9E9E9E;
@@ -106,12 +112,25 @@ button:hover {
 
 .buttonPrimary:hover {
   color: #9E9E9E;
-}
-
+} */
 
 .buttonSecondary {
-  color: #9E9E9E;
-  border: 1px solid #9E9E9E;
+  color: black;
+  border: none;
+  padding: 0;
+  margin-right: 16px;
+}
+
+.backButton:hover {
+  color: #595959;
+  background-color: white;
+  border: none;
+}
+
+.buttonSecondary:hover {
+  color: #595959;
+  background-color: white;
+  border: none;
 }
 
 .buttonList {
@@ -129,17 +148,15 @@ button:hover {
   background-color: white;
 }
 
-z
-
 .selectedButton {
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
 }
 
-  input[type="text"],
-  input[type="date"],
-  select {
-    width: 240px;
-    font-family: Avenir;
+input[type="text"],
+input[type="date"],
+select {
+  width: 240px;
+  font-family: Avenir;
 }
 
 textarea {
@@ -147,3 +164,14 @@ textarea {
   font-family: Avenir;
   resize: vertical;
 }
+
+th,
+td {
+  text-align: left;
+  padding-right: 32px;
+}
+
+/* Link {
+  text-decoration: none;
+  /* textdecoration: "none"; */
+} */

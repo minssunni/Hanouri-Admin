@@ -11,7 +11,7 @@ const BackButton = () => {
 
   return (
     <div>
-      <button className={styles.backButton} onClick={handleGoBack}>
+      <button className="buttonSecondary"onClick={handleGoBack}>
         <ArrowBackIosNewIcon />
         Back
         </button>

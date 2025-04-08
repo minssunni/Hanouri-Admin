@@ -13,5 +13,7 @@
 }
 
 .backButton:hover {
+  color: #595959;
   background-color: white;
+  border: none;
 }

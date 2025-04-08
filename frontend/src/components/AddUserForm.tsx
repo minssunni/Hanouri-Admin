@@ -157,8 +157,10 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.buttonContainer}>
-          <button className="buttonSecondary" onClick={handleClose}>Cancel</button>
-          <button className="buttonPrimary" type="submit">
+          <button className="buttonSecondary" onClick={handleClose}>
+            Cancel
+          </button>
+          <button type="submit">
             + Add
           </button>
         </div>
