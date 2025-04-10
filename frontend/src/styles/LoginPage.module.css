@@ -1,0 +1,40 @@
+.loginPage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: 1px solid black;
+  width: 300px;
+  padding: 32px;
+}
+
+.loginPage img {
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.loginPage button {
+  align-self: flex-end;
+  margin: 0;
+}
+
+.loginPage p {
+  text-align: left;
+  color: red;
+  padding-top: 16px;
+  margin: 0;
+}
+
+.loginPage input[type="text"],
+.loginPage input[type="password"] {
+  width: calc(100% - 32px);
+  border-radius: 50px;
+  border: 1px solid #595959;
+  padding: 8px 16px;
+  margin: 0 16px 16px 16px;
+}
