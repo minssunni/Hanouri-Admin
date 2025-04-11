@@ -1,0 +1,60 @@
+.buttonList {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-right: 0;
+  text-align: left;
+  font-family: Avenir;
+  font-size: medium;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+.buttonList:hover {
+  color: white;
+  background-color: #595959;
+  border: none;
+  border-bottom: 1px solid #595959;
+  cursor: pointer;
+}
+
+.buttonList {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-right: 0;
+  text-align: left;
+  font-family: Avenir;
+  font-size: medium;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+.buttonList:hover,
+.buttonListSelected:hover {
+  border: none;
+  border-bottom: 1px solid #595959;
+}
+
+.buttonListSelected {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-right: 0;
+  text-align: left;
+  font-family: Avenir;
+  font-size: medium;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #595959;
+  color: white;
+  background-color: #595959;
+  cursor: pointer;
+}

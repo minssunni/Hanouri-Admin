@@ -1,34 +1,33 @@
 import React, { useState } from 'react';
 import AttendanceModal from '../components/AttendanceModal';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess'; // Import the ExpandLessIcon
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; // Import the ExpandLessIcon
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import BackButton from '../components/BackButton';
+import styles from '../styles/List.module.css'; 
 
 const SundayDatesList = () => {
-  const startDate = new Date(); // Set the desired start date
-  startDate.setHours(0, 0, 0, 0); // Start from the beginning of the day
+  const startDate = new Date();
+  startDate.setHours(0, 0, 0, 0);
 
-  const endDate = new Date(); // Set the desired end date
-  endDate.setMonth(endDate.getMonth() + 6); // Set end date 6 months from the start date
+  const endDate = new Date();
+  endDate.setMonth(endDate.getMonth() + 6);
 
   const sundays = [];
   const currentDate = new Date(startDate);
 
   while (currentDate <= endDate) {
     if (currentDate.getDay() === 0) {
-      sundays.push(new Date(currentDate)); // Create a new instance to avoid reference issues
+      sundays.push(new Date(currentDate));
     }
-    currentDate.setDate(currentDate.getDate() + 1); // Move to the next day
+    currentDate.setDate(currentDate.getDate() + 1);
   }
 
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
-  const handleDateClick = (date) => {
+  const handleDateClick = (date: Date) => {
     if (selectedDate && selectedDate.toISOString() === date.toISOString()) {
-      // If the selected date is the same as the current date button, close the modal
       setSelectedDate(null);
     } else {
-      // If a different date or no date is selected, open the modal for the clicked date
       setSelectedDate(date);
     }
   };
@@ -49,7 +48,7 @@ const SundayDatesList = () => {
         {sundays.map((date) => (
           <li key={date.toISOString()}>
             <button
-              className={`${selectedDate && selectedDate.toISOString() === date.toISOString() ? "selectedButton" : "buttonList"}`}  // Add conditional class
+              className={selectedDate && selectedDate.toISOString() === date.toISOString() ? styles.buttonListSelected : styles.buttonList}
               onClick={() => handleDateClick(date)}
             >
               {selectedDate && selectedDate.toISOString() === date.toISOString() ? (
