@@ -5,9 +5,9 @@ import styles from "../styles/LoginPage.module.css";
 import Logo from "../assets/hanouri_logo.png";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
   const navigate = useNavigate();
 
   const handleLogin = () => {
