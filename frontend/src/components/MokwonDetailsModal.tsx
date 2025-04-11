@@ -1,6 +1,25 @@
 import styles from "../styles/Modal.module.css";
 
-const MokwonsPage = ({ selectedMokwon }) => {
+interface Mokwon {
+  id: number;
+  name: string;
+  group: string;
+  dateOfBirth: string;
+  gender: string;
+  address: string;
+  carPlate?: string;
+  emergencyContact?: string;
+  dateAdded: string;
+  notes?: string;
+  contact?: string;
+  attendanceRate?: number;
+}
+
+interface MokwonsPageProps {
+  selectedMokwon: Mokwon;
+}
+
+const MokwonsPage: React.FC<MokwonsPageProps> = ({ selectedMokwon }) => {
   return (
     <div className={styles.modal}>
       <p>Name: {selectedMokwon.name}</p>

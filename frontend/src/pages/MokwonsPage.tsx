@@ -6,11 +6,26 @@ import buttonStyles from "../styles/Button.module.css";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const MokwonsPage = () => {
-  const [mokwons, setMokwons] = useState(mokwonList);
-  const [selectedMokwons, setSelectedMokwons] = useState([]);
+interface Mokwon {
+  id: number;
+  name: string;
+  group: string;
+  dateOfBirth: string;
+  gender: string;
+  address: string;
+  carPlate?: string;
+  emergencyContact?: string;
+  dateAdded: string;
+  notes?: string;
+  contact?: string;
+  attendanceRate?: number;
+}
 
-  const handleClick = (mokwon) => {
+const MokwonsPage = () => {
+  const [mokwons, setMokwons] = useState<Mokwon[]>(mokwonList);
+  const [selectedMokwons, setSelectedMokwons] = useState<Mokwon[]>([]);
+
+  const handleClick = (mokwon: Mokwon) => {
     if (selectedMokwons.some((selected) => selected.id === mokwon.id)) {
       setSelectedMokwons(
         selectedMokwons.filter((selected) => selected.id !== mokwon.id)

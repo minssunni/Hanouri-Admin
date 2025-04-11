@@ -1,8 +1,23 @@
 import { mokwonList } from "../mockData/draftMokwonList";
 import { useState } from "react";
 
+interface User {
+  id: number;
+  name: string;
+  group: string;
+  dateOfBirth: string;
+  gender: string;
+  address: string;
+  carPlate?: string;
+  emergencyContact?: string;
+  dateAdded: string;
+  notes?: string;
+  contact?: string;
+  attendanceRate?: number;
+}
+
 const ViewAllUsersPage = () => {
-  const [users, setUsers] = useState(mokwonList);
+  const [users, setUsers] = useState<User[]>(mokwonList);
 
   return (
     <div>

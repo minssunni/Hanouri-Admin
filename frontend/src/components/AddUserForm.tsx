@@ -5,20 +5,20 @@ import styles from "../styles/AddUserForm.module.css";
 import buttonstyles from "../styles/Button.module.css";
 
 const AddUserForm = () => {
-  const [name, setName] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
-  const [gender, setGender] = useState("");
-  const [address, setAddress] = useState("");
-  const [carPlate, setCarPlate] = useState("");
-  const [emergencyContact, setEmergencyContact] = useState("");
-  const [dateAdded, setDateAdded] = useState("");
-  const [notes, setNotes] = useState("");
+  const [name, setName] = useState<string>("");
+  const [dateOfBirth, setDateOfBirth] = useState<string>("");
+  const [gender, setGender] = useState<string>("");
+  const [address, setAddress] = useState<string>("");
+  const [carPlate, setCarPlate] = useState<string>("");
+  const [emergencyContact, setEmergencyContact] = useState<string>("");
+  const [dateAdded, setDateAdded] = useState<string>("");
+  const [notes, setNotes] = useState<string>("");
 
-  const [showSuccess, setShowSuccess] = useState(false);
+  const [showSuccess, setShowSuccess] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setName("");

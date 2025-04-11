@@ -3,11 +3,17 @@ import { mokwonList } from "../mockData/draftMokwonList";
 import styles from "../styles/Modal.module.css";
 import buttonStyles from "../styles/Button.module.css";
 
-const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
+interface AttendanceModalProps {
+  selectedDate: Date;
+  onClose: () => void;
+  onSave: () => void;
+}
+
+const AttendanceModal:React.FC<AttendanceModalProps> = ({ selectedDate, onClose, onSave }) => {
   const [attendance, setAttendance] = useState(mokwonList);
   const [selectAllPresent, setSelectAllPresent] = useState(false);
 
-  const handlAllPresentCheckboxChange = (id) => {
+  const handlAllPresentCheckboxChange = (id: number) => {
     const updatedAttendance = attendance.map((item) => {
       if (item.id === id) {
         return {
