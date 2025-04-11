@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import styles from "../styles/AddUserForm.module.css";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SuccessDialog from "./SuccessDialog";
+import styles from "../styles/AddUserForm.module.css";
+import buttonstyles from "../styles/Button.module.css";
 
 const AddUserForm = () => {
   const [name, setName] = useState("");
@@ -46,9 +47,7 @@ const AddUserForm = () => {
     <div className={styles.addUserForm}>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label className={styles.formLabel} htmlFor="name">
-            Name
-          </label>
+          <label htmlFor="name">Name</label>
           <input
             id="name"
             type="text"
@@ -58,9 +57,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel} htmlFor="dateOfBirth">
-            Date of Birth
-          </label>
+          <label htmlFor="dateOfBirth">Date of Birth</label>
           <input
             id="dateOfBirth"
             type="date"
@@ -70,7 +67,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel}>Gender</label>
+          <label>Gender</label>
 
           <div>
             <label>
@@ -97,9 +94,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel} htmlFor="address">
-            Address
-          </label>
+          <label htmlFor="address">Address</label>
           <input
             id="address"
             type="text"
@@ -109,9 +104,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel} htmlFor="carPlate">
-            Car Plate
-          </label>
+          <label htmlFor="carPlate">Car Plate</label>
           <input
             id="carPlate"
             type="text"
@@ -121,9 +114,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel} htmlFor="emergencyContact">
-            Emergency Contact
-          </label>
+          <label htmlFor="emergencyContact">Emergency Contact</label>
           <input
             id="emergencyContact"
             type="text"
@@ -133,9 +124,7 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel} htmlFor="dateAdded">
-            Date Added
-          </label>
+          <label htmlFor="dateAdded">Date Added</label>
           <input
             id="dateAdded"
             type="date"
@@ -145,22 +134,19 @@ const AddUserForm = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.formLabel} htmlFor="notes">
-            Other Notes
-          </label>
+          <label htmlFor="notes">Other Notes</label>
           <textarea
             id="notes"
             value={notes}
-            // rows={4}
             onChange={(e) => setNotes(e.target.value)}
           />
         </div>
 
         <div className={styles.buttonContainer}>
-          <button className="buttonSecondary" onClick={handleClose}>
+          <button className={buttonstyles.closeBtn} onClick={handleClose}>
             Cancel
           </button>
-          <button type="submit">
+          <button className={buttonstyles.primaryBtn} type="submit">
             + Add
           </button>
         </div>

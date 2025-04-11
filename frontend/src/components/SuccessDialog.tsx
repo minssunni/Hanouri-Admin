@@ -1,5 +1,4 @@
-import React from "react";
-import styles from "../styles/SuccessDialog.module.css"
+import styles from "../styles/SuccessDialog.module.css";
 
 const SuccessDialog = ({ onClose }) => {
   return (

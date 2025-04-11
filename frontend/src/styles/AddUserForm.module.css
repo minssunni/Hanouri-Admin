@@ -2,15 +2,29 @@
   width: fit-content;
 }
 
-.formGroup {
-    display: flex;
-    margin-bottom: 10px;
-  }
-
-.formLabel {
+.addUserForm label {
   width: 180px;
   text-align: left;
   margin-right: 10px;
+}
+
+.addUserForm input[type="text"],
+.addUserForm input[type="date"],
+.addUserForm input[type="password"],
+.addUserForm select {
+  width: 240px;
+  font-family: Avenir;
+}
+
+.addUserForm textarea {
+  width: 240px;
+  font-family: Avenir;
+  resize: vertical;
+}
+
+.formGroup {
+  display: flex;
+  margin-bottom: 10px;
 }
 
 .buttonContainer {

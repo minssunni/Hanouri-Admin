@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
-import { mokwonList } from '../mockData/draftMokwonList';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import styles from '../styles/Modal.module.css';
-import BackButton from '../components/BackButton';
-import MokwonDetailsModal from '../components/MokwonDetailsModal';
+import { useState } from "react";
+import { mokwonList } from "../mockData/draftMokwonList";
+import MokwonDetailsModal from "../components/MokwonDetailsModal";
+import BackButton from "../components/BackButton";
+import buttonStyles from "../styles/Button.module.css";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const MokwonsPage = () => {
   const [mokwons, setMokwons] = useState(mokwonList);
-  const [selectedMokwon, setSelectedMokwon] = useState(null);
+  const [selectedMokwons, setSelectedMokwons] = useState([]);
 
   const handleClick = (mokwon) => {
-    if (selectedMokwon && selectedMokwon.id === mokwon.id) {
-      setSelectedMokwon(null);
+    if (selectedMokwons.some((selected) => selected.id === mokwon.id)) {
+      setSelectedMokwons(
+        selectedMokwons.filter((selected) => selected.id !== mokwon.id)
+      );
     } else {
-      setSelectedMokwon(mokwon);
+      setSelectedMokwons([...selectedMokwons, mokwon]);
     }
-  };  
+  };
 
   return (
     <div>
@@ -26,20 +28,23 @@ const MokwonsPage = () => {
         <li key={mokwon.id}>
           <label>
             <button
-          className={`buttonList ${selectedMokwon && selectedMokwon.id === mokwon.id ? "selectedButton" : ''}`}  // Add conditional class
-          onClick={() => handleClick(mokwon)}
+              className={
+                selectedMokwons.some((selected) => selected.id === mokwon.id)
+                  ? buttonStyles.listBtnSelected
+                  : buttonStyles.listBtn
+              }
+              onClick={() => handleClick(mokwon)}
             >
-              {selectedMokwon && selectedMokwon.id === mokwon.id ? (
+              {selectedMokwons.some((selected) => selected.id === mokwon.id) ? (
                 <ExpandLessIcon />
               ) : (
                 <ExpandMoreIcon />
               )}
               {mokwon.name}
             </button>
-
           </label>
-          {selectedMokwon && selectedMokwon.id === mokwon.id && (
-            <MokwonDetailsModal selectedMokwon={selectedMokwon} />
+          {selectedMokwons.some((selected) => selected.id === mokwon.id) && (
+            <MokwonDetailsModal selectedMokwon={mokwon} />
           )}
         </li>
       ))}

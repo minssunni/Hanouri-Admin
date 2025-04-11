@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import AttendanceModal from '../components/AttendanceModal';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import BackButton from '../components/BackButton';
-import styles from '../styles/List.module.css'; 
+import { useState } from "react";
+import AttendanceModal from "../components/AttendanceModal";
+import BackButton from "../components/BackButton";
+import buttonStyles from "../styles/Button.module.css";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const SundayDatesList = () => {
   const startDate = new Date();
@@ -37,7 +37,7 @@ const SundayDatesList = () => {
   };
 
   const handleSaveAttendance = () => {
-    console.log('Attendance data:', selectedDate);
+    console.log("Attendance data:", selectedDate);
     handleCloseModal();
   };
 
@@ -45,28 +45,34 @@ const SundayDatesList = () => {
     <div>
       <BackButton />
       <h2>Attendance</h2>
-        {sundays.map((date) => (
-          <li key={date.toISOString()}>
-            <button
-              className={selectedDate && selectedDate.toISOString() === date.toISOString() ? styles.buttonListSelected : styles.buttonList}
-              onClick={() => handleDateClick(date)}
-            >
-              {selectedDate && selectedDate.toISOString() === date.toISOString() ? (
-                <ExpandLessIcon />
-              ) : (
-                <ExpandMoreIcon />
-              )}
-              {date.toDateString()}
-            </button>
-            {selectedDate && selectedDate.toISOString() === date.toISOString() && (
+      {sundays.map((date) => (
+        <li key={date.toISOString()}>
+          <button
+            className={
+              selectedDate && selectedDate.toISOString() === date.toISOString()
+                ? buttonStyles.listBtnSelected
+                : buttonStyles.listBtn
+            }
+            onClick={() => handleDateClick(date)}
+          >
+            {selectedDate &&
+            selectedDate.toISOString() === date.toISOString() ? (
+              <ExpandLessIcon />
+            ) : (
+              <ExpandMoreIcon />
+            )}
+            {date.toDateString()}
+          </button>
+          {selectedDate &&
+            selectedDate.toISOString() === date.toISOString() && (
               <AttendanceModal
                 selectedDate={selectedDate}
                 onClose={handleCloseModal}
                 onSave={handleSaveAttendance}
               />
             )}
-          </li>
-        ))}
+        </li>
+      ))}
     </div>
   );
 };

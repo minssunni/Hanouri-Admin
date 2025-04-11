@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "column"}}>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         <h1>Home Page</h1>
         <Link to="/users"> View All Users</Link>
         <Link to="/attendance">Attendance</Link>

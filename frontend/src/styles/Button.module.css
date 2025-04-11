@@ -1,27 +1,46 @@
-.buttonList {
+.primaryBtn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
-  margin-right: 0;
+  padding: 8px 16px 8px 16px;
+  margin-right: 8px;
   text-align: left;
+  text-decoration: none;
   font-family: Avenir;
   font-size: medium;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid black;
+  border: 1px solid black;
+  border-radius: 50px;
   background-color: white;
 }
 
-.buttonList:hover {
+.primaryBtn:hover {
   color: white;
   background-color: #595959;
-  border: none;
-  border-bottom: 1px solid #595959;
+  border: 1px solid #595959;
   cursor: pointer;
 }
 
-.buttonList {
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 0px;
+  margin-right: 0;
+  text-align: left;
+  font-family: Avenir;
+  font-size: medium;
+  border: none;
+  background-color: white;
+}
+
+.closeBtn:hover,
+.backBtn:hover {
+  color: #595959;
+  border: none;
+  cursor: pointer;
+}
+
+.listBtn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -36,17 +55,41 @@
   background-color: white;
 }
 
-.buttonList:hover,
-.buttonListSelected:hover {
+.listBtn:hover {
+  color: black;
+  background-color: #e9e9e9;
   border: none;
-  border-bottom: 1px solid #595959;
+  cursor: pointer;
 }
 
-.buttonListSelected {
+.listBtn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  padding: 8px;
+  margin-right: 0;
+  text-align: left;
+  font-family: Avenir;
+  font-size: medium;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+.listBtn:hover,
+.listBtnSelected:hover {
+  border: none;
+  border-bottom: 1px solid #595959;
+}
+
+.listBtnSelected {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 8px;
   margin-right: 0;
   text-align: left;
   font-family: Avenir;

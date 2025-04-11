@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../styles/AddUserPage.module.css";
 import AddUserForm from "../components/AddUserForm";
 import BackButton from "../components/BackButton";

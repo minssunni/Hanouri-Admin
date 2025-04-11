@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import styles from '../styles/Modal.module.css';
-import { mokwonList } from '../mockData/draftMokwonList';
+import { useState } from "react";
+import { mokwonList } from "../mockData/draftMokwonList";
+import styles from "../styles/Modal.module.css";
+import buttonStyles from "../styles/Button.module.css";
 
 const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
   const [attendance, setAttendance] = useState(mokwonList);
@@ -65,8 +66,12 @@ const AttendanceModal = ({ selectedDate, onClose, onSave }) => {
           ))}
         </ul>
         <div className={styles.buttonContainer}>
-          <button onClick={handleSave}>Save</button>
-          <button className="buttonSecondary" onClick={onClose}>Cancel</button>
+          <button className={buttonStyles.primaryBtn} onClick={handleSave}>
+            Save
+          </button>
+          <button className={buttonStyles.closeBtn} onClick={onClose}>
+            Cancel
+          </button>
         </div>
       </div>
     </div>
